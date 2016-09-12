@@ -11,16 +11,23 @@ void draw()
 	int cGreen = (int)(Math.random()*255);
 	int cBlue = (int)(Math.random()*255);
 	*/
-	int rollSum = 0;
+	
 
 	background((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
+	int rollSum = 0;
+	int numSix=0;
 	for(int i = 5; i < 400; i += 50)
 	{
 		for(int j = 5; j < 340; j += 50)
 		{
 			Die duck = new Die(i,j);
 			duck.show();	
-			rollSum = rollSum + duck.rollValue;
+			rollSum += duck.rollValue;
+			
+			if(duck.rollValue==6) {
+				numSix++;
+
+			}
 		}
 	}
 	fill(43, 149, 255);
@@ -36,14 +43,14 @@ void draw()
 	stroke(0);
 	ellipse(280, 370, 40, 40);
 	ellipse(330, 370, 40, 40);
-	if(rollSum > 168)
+	if(rollSum > 196)
 	{
 		fill(0, 255, 0);
 		stroke(0);
 		ellipse(280, 370, 40, 40);
 	}
 
-	else if(rollSum < 168)
+	else if(rollSum < 196)
 	{
 		fill(0, 255, 0);
 		stroke(0);
@@ -57,6 +64,7 @@ void draw()
 		ellipse(330, 370, 40, 40);	
 		ellipse(280, 370, 40, 40);
 	}
+	//System.out.println(numSix);
 
 
 }
