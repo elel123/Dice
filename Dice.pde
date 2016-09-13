@@ -6,11 +6,7 @@ void setup()
 }
 void draw()
 {
-	/*
-	int cRed = (int)(Math.random()*255);
-	int cGreen = (int)(Math.random()*255);
-	int cBlue = (int)(Math.random()*255);
-	*/
+
 	
 
 	background((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
@@ -32,37 +28,52 @@ void draw()
 	}
 	fill(43, 149, 255);
 	rect(2, 358, 180, 30);
+	rect(217, 348, 175, 52);
 	textSize(16);
 	fill(0);
 	textAlign(CENTER);
 	text("The Sum of Rolls: " + rollSum, 90, 380);
 	textSize(10);
-	text("Above Half", 275, 398);
-	text("Below Half", 335, 398);
+	text("Above Average", 255, 398);
+	text("Below Average", 355, 398);
 	fill(0);
 	stroke(0);
-	ellipse(280, 370, 40, 40);
-	ellipse(330, 370, 40, 40);
-	if(rollSum > 196)
+	ellipse(260, 370, 40, 40);
+	ellipse(350, 370, 40, 40);
+	if(rollSum > 196 && rollSum <= 252)
 	{
 		fill(0, 255, 0);
 		stroke(0);
-		ellipse(280, 370, 40, 40);
+		ellipse(260, 370, 40, 40);
 	}
 
-	else if(rollSum < 196)
+	else if(rollSum < 196 && rollSum >= 84)
 	{
 		fill(0, 255, 0);
 		stroke(0);
-		ellipse(330, 370, 40, 40);		
+		ellipse(350, 370, 40, 40);		
+	}
+
+	else if(rollSum < 84)
+	{
+		fill(255, 0, 0);
+		stroke(0);
+		ellipse(350, 370, 40, 40);		
+	}
+
+	else if(rollSum > 252)
+	{
+		fill(255, 0, 0);
+		stroke(0);
+		ellipse(260, 370, 40, 40);		
 	}
 
 	else 
 	{
 		fill(0, 255, 0);
 		stroke(0);
-		ellipse(330, 370, 40, 40);	
-		ellipse(280, 370, 40, 40);
+		ellipse(350, 370, 40, 40);	
+		ellipse(260, 370, 40, 40);
 	}
 	//System.out.println(numSix);
 
